@@ -10,7 +10,7 @@ give it write permission
 
 Add the Twig config file to application/config/twig.php
 
-Download and extract the Twig library into application/libraries. The directories should look like this
+Download the [Twig library](http://twig.sensiolabs.org/). Extract the it into application/libraries. The directories should look like this
 
     application/libraries/Twig
     |-- Error
