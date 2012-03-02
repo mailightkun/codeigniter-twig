@@ -33,6 +33,12 @@ class Twig
                 'cache' => $this->_cache_dir,
                 'debug' => $debug,
 		));
+		
+	        foreach(get_defined_functions() as $functions) {
+            		foreach($functions as $function) {
+                		$this->_twig->addFunction($function, new Twig_Function_Function($function));
+            		}
+        	}
 	}
 
 	public function add_function($name) 
