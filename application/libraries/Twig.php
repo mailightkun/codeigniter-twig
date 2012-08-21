@@ -15,12 +15,19 @@ class Twig
 	{
 		$this->CI =& get_instance();
 		$this->CI->config->load('twig');
-		 
+				
 		log_message('debug', "Twig Autoloader Loaded");
 
 		Twig_Autoloader::register();
 
-		$this->_template_dir = $this->CI->config->item('template_dir');
+		//HMVC patch by joseayram
+		$template_module_dir = APPPATH.'modules/'.$this->CI->router->fetch_module().'/views/';
+		$template_global_dir= $this->CI->config->item('template_dir');
+		$this->_template_dir = array($template_global_dir, $template_module_dir);
+
+		//end HMVC patch 
+
+		
 		$this->_cache_dir = $this->CI->config->item('cache_dir');
 
 		$loader = new Twig_Loader_Filesystem($this->_template_dir);
