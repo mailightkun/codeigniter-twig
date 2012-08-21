@@ -16,10 +16,6 @@ class Twig
 		$this->CI =& get_instance();
 		$this->CI->config->load('twig');
 		 
-		ini_set('include_path',
-		ini_get('include_path') . PATH_SEPARATOR . APPPATH . 'libraries/Twig');
-		require_once (string) "Autoloader" . EXT;
-
 		log_message('debug', "Twig Autoloader Loaded");
 
 		Twig_Autoloader::register();

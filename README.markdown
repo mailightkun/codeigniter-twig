@@ -10,22 +10,31 @@ give it write permission
 
 Add the Twig config file to application/config/twig.php
 
-Download the [Twig library](http://twig.sensiolabs.org/). Extract the it into application/libraries. The directories should look like this
 
-    application/libraries/Twig
-    |-- Error
-    |-- Extension
-    |-- Filter
-    |-- Function
-    |-- Loader
-    |-- Node
-    |   `-- Expression
-    |       |-- Binary
-    |       `-- Unary
-    |-- NodeVisitor
-    |-- Sandbox
-    |-- Test
-    `-- TokenParser
+## Install Twig Using Composer
+
+Navigate to your project and install composer:
+
+    $ cd /path/to/my/project
+    $ curl -s http://getcomposer.org/installer | php
+
+Add composer.json in root folder
+
+    {
+        "require": {
+            "twig/twig": "1.9.1"
+        }
+    }
+
+Execute 
+
+    $ composer.phar install
+
+Add following line at the top of index.php : 
+    
+    include_once './vendor/autoload.php';
+
+
 
 ## Usage
 
